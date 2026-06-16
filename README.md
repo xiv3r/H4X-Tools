@@ -1,5 +1,5 @@
 #### Contributions are WELCOME!!! And NEEDED!!
-If you have the knowledge and skills, please contribute by opening a pull request. I don’t want to be the only one keeping this project alive. Every tool is welcome and feel free to even fix my code. Let's make this the biggest OSINT, scraping, recon and utility toolkit together, shall we?
+If you have the knowledge and skills, please contribute by opening a pull request. I don’t want to be the only one keeping this project alive. Every tool is welcome and feel free to even fix my code, just follow the contribution rules listed on this README. Let's make this the biggest OSINT, scraping, recon and utility toolkit together, shall we?
 
 # H4X-Tools
 
@@ -340,7 +340,7 @@ H4X-Tools automatically discovers `BaseTool` subclasses from `tools/`, so your t
 Run the lightweight checks:
 
 ```sh
-python -m py_compile h4xtools.py helper/handles.py tools/*.py utils/*.py
+python -m py_compile h4xtools.py tools/*.py utils/*.py
 python h4xtools.py --help
 python h4xtools.py --list-tools --no-internet-check
 ```
