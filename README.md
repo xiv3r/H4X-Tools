@@ -1,3 +1,6 @@
+#### Contributions are WELCOME!!!
+If you have the knowledge and skills, please contribute by opening a pull request. I don’t want to be the only one keeping this project alive. Every tool is welcome and feel free to even fix my code. Let's make this the biggest OSINT, scraping, recon and utility toolkit together, shall we?
+
 # H4X-Tools
 
 [![GitHub latest commit](https://badgen.net/github/last-commit/vil/H4X-Tools)](https://GitHub.com/vil/H4X-Tools/commit/)
