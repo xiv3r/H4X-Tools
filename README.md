@@ -68,6 +68,7 @@ A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - buil
 | 14 | **Dir Buster** | Asynchronously bruteforces directory and file paths on a target website using a built-in wordlist, printing every URL that returns HTTP 200. |
 | 15 | **Bluetooth Scanner** | Scans for nearby Bluetooth devices via `bluetoothctl` (Linux) and reports device names and MAC addresses. *(Windows support coming soon.)* |
 | 16 | **Local Users** | Enumerates all local user accounts on the system. On Linux: username, UID, GID, full name, home directory, shell, and group. On Windows: username, terminal, host, session start time, PID, SID, and domain. |
+| 17 | **Git Scrape** | Scrapes and analyzes a Git repository (remote/local) or a GitHub account for possible personal email leaks and other data. *(Other platforms will be supported soon.)* |
 
 ---
 
