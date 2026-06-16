@@ -27,7 +27,6 @@ class IgScrapeTool(BaseTool):
     description = (
         "Two-track Instagram OSINT scraper. Guest mode uses the ensta Guest API for public profile data and recent posts. "
         "Authenticated mode can query Instagram's private mobile API for richer public account data. Results can be exported as TXT, CSV, or JSON. "
-        "New CLI flags: --session-id, --skip-obf (true/false), --comments-limit N."
     )
     arguments = (
         ToolArgument("target", "USERNAME", "Run Instagram scrape for USERNAME."),

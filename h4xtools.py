@@ -43,8 +43,8 @@ def _get_git_ref() -> str:
         return result.stdout.strip()
     except (subprocess.CalledProcessError, FileNotFoundError):
         # Fallback if git fails (e.g., not a git repo) or git is not installed
-        printer.warning(
-            "Failed to fetch the version hash! Make sure you are running this in the parent folder!"
+        printer.verbose(
+            "Failed to fetch the build hash! Make sure you are running this in the parent folder!"
         )
         return "26"
 
@@ -79,7 +79,7 @@ def _print_banner() -> None:
 ██▀▐█ ·██·  ▐█.▪ ▄█▀▄  ▄█▀▄ ██▪  ▄▀▀▀█▄
 ██▌▐▀▪▐█·█▌ ▐█▌·▐█▌.▐▌▐█▌.▐▌▐█▌▐▌▐█▄▪▐█
 ▀▀▀ ·•▀▀ ▀▀ ▀▀▀  ▀█▄▀▪ ▀█▄▀▪.▀▀▀  ▀▀▀▀
-{Style.RESET_ALL}build: {VERSION} / Vili (@vil) / https://vili.dev
+{Style.RESET_ALL}Build {VERSION} / Vili (@vil) / https://vili.dev
     """
     )
 
