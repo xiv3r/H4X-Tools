@@ -19,6 +19,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import argparse
 import socket
+import subprocess
 import time
 
 from colorama import Fore, Style
@@ -26,9 +27,26 @@ from colorama import Fore, Style
 from helper import config, printer
 from tools import BaseTool, discover_tools
 
-VERSION = "26.1"
 QUIT_COMMANDS = {"quit", "exit", "q", "kill"}
 HELP_COMMANDS = {"?", "help"}
+
+
+def _get_git_ref() -> str:
+    """Returns the SHORT commit hash of the latest commit"""
+    try:
+        result = subprocess.run(
+            ["git", "rev-parse", "--short", "HEAD"],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+        return result.stdout.strip()
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        # Fallback if git fails (e.g., not a git repo) or git is not installed
+        printer.warning(
+            "Failed to fetch the version hash! Make sure you are running this in the parent folder!"
+        )
+        return "26"
 
 
 def _internet_check() -> None:
@@ -48,6 +66,10 @@ def _internet_check() -> None:
         )
 
 
+# Hash as the "version" string
+VERSION = _get_git_ref()
+
+
 def _print_banner() -> None:
     print(
         Fore.LIGHTBLACK_EX
@@ -57,7 +79,7 @@ def _print_banner() -> None:
 ██▀▐█ ·██·  ▐█.▪ ▄█▀▄  ▄█▀▄ ██▪  ▄▀▀▀█▄
 ██▌▐▀▪▐█·█▌ ▐█▌·▐█▌.▐▌▐█▌.▐▌▐█▌▐▌▐█▄▪▐█
 ▀▀▀ ·•▀▀ ▀▀ ▀▀▀  ▀█▄▀▪ ▀█▄▀▪.▀▀▀  ▀▀▀▀
-{Style.RESET_ALL}v{VERSION} / Vili (@vil) - https://vili.dev
+{Style.RESET_ALL}build: {VERSION} / Vili (@vil) / https://vili.dev
     """
     )
 
@@ -65,7 +87,7 @@ def _print_banner() -> None:
 def _display_help(tools: tuple[BaseTool, ...]) -> None:
     print(Fore.LIGHTCYAN_EX)
     print(
-        "H4X-Tools v{} - A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - built in Python, runs on Linux and Windows.".format(
+        "H4X-Tools build: {} - A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - built in Python, runs on Linux and Windows.".format(
             VERSION
         )
     )
