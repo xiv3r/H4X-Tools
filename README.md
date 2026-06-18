@@ -81,7 +81,7 @@ A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - buil
 > Requires [Python 3.10+](https://www.python.org/downloads/) and [Git](https://git-scm.com/downloads).
 > See the [wiki](https://github.com/vil/H4X-Tools/wiki) for a step-by-step guide.
 
-### Linux / macOS
+### Linux
 
 ```sh
 git clone https://github.com/vil/h4x-tools.git
@@ -111,7 +111,7 @@ python3 --version
 
 ```sh
 # Using the standard library venv
-# Unix (Linux / macOS)
+# Unix
 python3 -m venv .venv
 
 # Windows (PowerShell / cmd)
@@ -121,7 +121,7 @@ python -m venv .venv
 3. Activate the virtual environment:
 
 ```sh
-# Unix (Linux / macOS)
+# Unix
 source .venv/bin/activate
 
 # Windows (PowerShell)
