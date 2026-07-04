@@ -24,16 +24,6 @@ A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - buil
   <tbody>
     <tr>
       <td width="500">
-        <a href="https://mangoproxy.com/?utm_source=github&utm_medium=partner&utm_campaign=vili">
-          <img src="https://raw.githubusercontent.com/vil/vil/refs/heads/master/Banner_MangoProxy.png" alt="MangoProxy" width="500">
-        </a>
-      </td>
-      <td>
-        <a href="https://mangoproxy.com/?utm_source=github&utm_medium=partner&utm_campaign=vili"><strong>MangoProxy</strong></a> provides residential, ISP, datacenter, and mobile proxies in 200+ countries. Trusted by businesses worldwide for stable connections, fast response times, and scalable proxy infrastructure. Use promo code <strong>VILI</strong> to get <strong>8% off</strong> Static ISP proxies.
-      </td>
-    </tr>
-    <tr>
-      <td width="500">
         <a href="https://www.swiftproxy.net/?ref=H4XTools">
           <img src="https://raw.githubusercontent.com/vil/vil/refs/heads/master/Swiftproxy_banner.png" alt="Swiftproxy" width="500">
         </a>
