@@ -12,33 +12,6 @@ A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - buil
 
 ![](https://github.com/vil/vil/blob/master/h4xtools_gui_v26.png?raw=true)
 
-### Sponsors
-
-<table>
-  <thead>
-    <tr>
-      <th>Sponsor</th>
-      <th>Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td width="500">
-        <a href="https://www.swiftproxy.net/?ref=H4XTools">
-          <img src="https://raw.githubusercontent.com/vil/vil/refs/heads/master/Swiftproxy_banner.png" alt="Swiftproxy" width="500">
-        </a>
-      </td>
-      <td>
-        <a href="https://www.swiftproxy.net/?ref=H4XTools"><strong>Swiftproxy</strong></a> provides premium residential proxies with 80M+ IPs across 190+ countries. Supports HTTP, HTTPS, and SOCKS5 with rotating and sticky sessions, non-expiring traffic. Ideal for OSINT, web scraping, automation, data collection, and large-scale online operations. <strong>Free trial</strong> available and <strong>10% off</strong> with code <strong>PROXY90</strong>.
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<br>
-
----
-
 <br>
 
 ## Tools
@@ -355,3 +328,11 @@ Pre-compiled binaries are **not** provided. Downloading pre-built executables fr
 > This source code is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt).
 
 **This toolkit is intended for educational and authorised security research purposes only. Do not use it against systems or accounts you do not own or have explicit permission to test.**
+
+---
+
+### Past Sponsors
+Thanks to the past sponsors of H4X-Tools!
+
+- [SwiftProxy](https://www.swiftproxy.net/?ref=H4XTools)
+- [MangoProxy](https://mangoproxy.com/?utm_source=github&utm_medium=partner&utm_campaign=vili)
