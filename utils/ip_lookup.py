@@ -21,7 +21,7 @@ import time
 import requests
 from colorama import Style
 
-from helper import printer, randomuser, timer
+from helper import printer, proxymanager, randomuser, timer
 
 # Human-readable labels for the keys returned by ipinfo.io.
 # Any key not listed here falls back to key.replace("_", " ").title().
@@ -52,7 +52,7 @@ def lookup(ip_address: str) -> None:
         ip_address = socket.gethostbyname(ip_address)
         url = f"https://ipinfo.io/{ip_address}/json"
         headers = {"User-Agent": str(randomuser.GetUser())}
-        response = requests.get(url, headers=headers)
+        response = requests.get(url, headers=headers, proxies=proxymanager.get_requests_proxies())
         response.raise_for_status()
         values = response.json()
 

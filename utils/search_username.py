@@ -28,7 +28,7 @@ from typing import Any
 
 from colorama import Style
 
-from helper import printer, timer
+from helper import printer, proxymanager, timer
 
 REPORT_DIR = Path("scraped_data/maigret")
 MAIGRET_DB_PATH = Path.home() / ".maigret" / "data.json"
@@ -457,6 +457,10 @@ def _run_maigret(username: str, config: MaigretConfig) -> dict[str, Any] | None:
 
         if config.print_errors:
             command.append("--print-errors")
+
+        proxy = proxymanager.get_proxy()
+        if proxy:
+            command.extend(["--proxy", proxy])
 
         try:
             result = subprocess.run(

@@ -24,7 +24,7 @@ import time
 
 from colorama import Fore, Style
 
-from helper import config, printer
+from helper import config, printer, proxymanager
 from tools import BaseTool, discover_tools
 
 QUIT_COMMANDS = {"quit", "exit", "q", "kill"}
@@ -137,6 +137,22 @@ def _print_menu(tools: tuple[BaseTool, ...]) -> None:
             print(" " * 4, end="")
 
     print("\n")
+
+    if proxymanager.is_enabled():
+        proxy_list = proxymanager.list_proxies()
+        count = len(proxy_list)
+        mode = "rotating" if proxymanager.is_rotating() else "fixed"
+        if count:
+            print(
+                f"{Fore.LIGHTGREEN_EX}[P]{Style.RESET_ALL} "
+                f"Proxy routing active / {count} {'proxy' if count == 1 else 'proxies'} ({mode})"
+            )
+        else:
+            print(
+                f"{Fore.LIGHTYELLOW_EX}[P]{Style.RESET_ALL} "
+                "Proxy routing enabled but no proxies configured."
+            )
+
     print(f"Type {Style.BRIGHT}?{Style.RESET_ALL} for help.")
     print(f"Type {Style.BRIGHT}exit{Style.RESET_ALL} to close the toolkit...")
 

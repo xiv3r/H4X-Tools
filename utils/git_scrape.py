@@ -28,7 +28,7 @@ from typing import Any
 
 import requests
 
-from helper import printer
+from helper import printer, proxymanager
 
 _SAVE_DIR = Path("scraped_data")
 
@@ -170,7 +170,7 @@ def scrape_github_user(username: str, token: str, profile: GitHubProfile) -> Non
     profile_url = f"https://api.github.com/users/{username}"
     printer.verbose(f"Fetching profile data for: {username}")
     profile_data = _handle_api_response(
-        requests.get(profile_url, headers=headers, timeout=10)
+        requests.get(profile_url, headers=headers, proxies=proxymanager.get_requests_proxies(), timeout=10)
     )
 
     if not profile_data:
@@ -217,7 +217,7 @@ def scrape_github_user(username: str, token: str, profile: GitHubProfile) -> Non
 
     repos_url = f"https://api.github.com/users/{username}/repos?type=owner&sort=updated&per_page=5"
     repos_data = _handle_api_response(
-        requests.get(repos_url, headers=headers, timeout=10)
+        requests.get(repos_url, headers=headers, proxies=proxymanager.get_requests_proxies(), timeout=10)
     )
 
     if not repos_data:
@@ -232,7 +232,7 @@ def scrape_github_user(username: str, token: str, profile: GitHubProfile) -> Non
             f"https://api.github.com/repos/{username}/{repo_name}/commits?per_page=100"
         )
         commits_data = _handle_api_response(
-            requests.get(commits_url, headers=headers, timeout=10)
+            requests.get(commits_url, headers=headers, proxies=proxymanager.get_requests_proxies(), timeout=10)
         )
 
         if not commits_data or not isinstance(commits_data, list):
@@ -284,7 +284,7 @@ def scrape_github_repo(
         f"https://api.github.com/repos/{owner}/{repo_name}/commits?per_page=100"
     )
     commits_data = _handle_api_response(
-        requests.get(commits_url, headers=headers, timeout=10)
+        requests.get(commits_url, headers=headers, proxies=proxymanager.get_requests_proxies(), timeout=10)
     )
 
     if not commits_data or not isinstance(commits_data, list):

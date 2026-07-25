@@ -2,6 +2,7 @@ colorama
 ddgs
 phonenumbers
 requests
+PySocks
 beautifulsoup4
 urllib3
 whoisdomain

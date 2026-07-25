@@ -28,7 +28,7 @@ import aiohttp
 from bs4 import BeautifulSoup
 from colorama import Style
 
-from helper import printer, randomuser, timer
+from helper import printer, proxymanager, randomuser, timer
 
 REQUEST_TIMEOUT = aiohttp.ClientTimeout(total=15, connect=5, sock_read=10)
 MAX_CONCURRENT_REQUESTS = 12
@@ -352,7 +352,7 @@ async def _fetch(session: aiohttp.ClientSession, url: str) -> str:
     :return: Response body as text, or an empty string on error.
     """
     try:
-        async with session.get(url, allow_redirects=True) as response:
+        async with session.get(url, proxy=proxymanager.get_aiohttp_proxy(), allow_redirects=True) as response:
             if response.status >= 400:
                 return ""
 

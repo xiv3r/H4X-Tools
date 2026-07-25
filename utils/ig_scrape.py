@@ -31,7 +31,7 @@ from colorama import Style
 from ensta import Guest
 from ensta.lib.Exceptions import APIError, NetworkError, RateLimitedError
 
-from helper import config, printer, timer
+from helper import config, printer, proxymanager, timer
 
 _KEY_WIDTH = 24
 _SAVE_DIR = Path("scraped_data")
@@ -498,6 +498,7 @@ def _get_instagram_user_id(username: str, session_id: str) -> dict:
             params={"username": username},
             headers={"User-Agent": _WEB_UA, "x-ig-app-id": _WEB_IG_APP_ID},
             cookies={"sessionid": session_id},
+            proxies=proxymanager.get_requests_proxies(),
             timeout=20,
         )
     except requests.RequestException as exc:
@@ -554,6 +555,7 @@ def _get_instagram_info(
             f"https://i.instagram.com/api/v1/users/{user_id}/info/",
             headers=_mobile_headers(),
             cookies={"sessionid": session_id},
+            proxies=proxymanager.get_requests_proxies(),
             timeout=20,
         )
     except requests.RequestException:
@@ -598,6 +600,7 @@ def _fetch_post_comments(
             params=params,
             headers=headers,
             cookies=_session_cookies(session_id),
+            proxies=proxymanager.get_requests_proxies(),
             timeout=20,
         )
     except requests.RequestException as exc:
@@ -650,6 +653,7 @@ def _fetch_authenticated_posts(
             params={"count": limit},
             headers=_mobile_headers(),
             cookies=_session_cookies(session_id),
+            proxies=proxymanager.get_requests_proxies(),
             timeout=20,
         )
     except requests.RequestException as exc:
@@ -695,6 +699,7 @@ def _fetch_authenticated_stories(user_id: str, session_id: str) -> list[StoryIte
             params={"reel_ids": user_id},
             headers=_mobile_headers(),
             cookies=_session_cookies(session_id),
+            proxies=proxymanager.get_requests_proxies(),
             timeout=20,
         )
     except requests.RequestException as exc:
@@ -736,6 +741,7 @@ def _fetch_authenticated_highlights(user_id: str, session_id: str) -> list[Story
             f"https://i.instagram.com/api/v1/highlights/{user_id}/highlights_tray/",
             headers=_mobile_headers(),
             cookies=_session_cookies(session_id),
+            proxies=proxymanager.get_requests_proxies(),
             timeout=20,
         )
     except requests.RequestException as exc:
@@ -768,6 +774,7 @@ def _fetch_authenticated_highlights(user_id: str, session_id: str) -> list[Story
                 params={"reel_ids": highlight_id},
                 headers=_mobile_headers(),
                 cookies=_session_cookies(session_id),
+                proxies=proxymanager.get_requests_proxies(),
                 timeout=20,
             )
         except requests.RequestException:
@@ -814,6 +821,7 @@ def _fetch_authenticated_reels(
                 params={"target_user_id": user_id, "page_size": limit},
                 headers=_mobile_headers(),
                 cookies=_session_cookies(session_id),
+                proxies=proxymanager.get_requests_proxies(),
                 timeout=20,
             )
         except requests.RequestException:
@@ -916,6 +924,9 @@ def _fetch_web_recovery_context() -> tuple[
     """Fetch fresh guest browser cookies and tokens for Instagram web GraphQL."""
     session = requests.Session()
     session.headers.update(_web_headers())
+    _px = proxymanager.get_requests_proxies()
+    if _px:
+        session.proxies.update(_px)
     attempts: list[dict[str, object]] = []
 
     for url in (
@@ -1207,6 +1218,7 @@ def _instagram_advanced_lookup(username: str, session_id: str = "") -> dict:
                         headers=headers,
                         cookies=cookies,
                         data=data,
+                        proxies=proxymanager.get_requests_proxies(),
                         timeout=20,
                     )
                 except requests.RequestException as exc:
