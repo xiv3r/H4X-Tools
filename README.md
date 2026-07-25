@@ -267,7 +267,8 @@ The built-in manager covers the following tools automatically when enabled:
 | Phone Lookup | Not supported (ignorant subprocess) |
 | WhoIs Lookup | Not supported (raw WHOIS socket protocol) |
 
-> ¹ Web Scrape and Dir Buster use `aiohttp`, which natively supports HTTP/HTTPS proxies only. SOCKS proxies are silently skipped for these two tools. Use ProxyChains (method 2) if you need SOCKS coverage for them.
+> [!TIP]
+> Web Scrape and Dir Buster use `aiohttp`, which natively supports HTTP/HTTPS proxies only. SOCKS proxies are silently skipped for these two tools. Use ProxyChains (method 2) if you need SOCKS coverage for them.
 
 ---
 
