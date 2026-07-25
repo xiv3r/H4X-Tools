@@ -25,7 +25,7 @@ from pathlib import Path
 import requests
 from colorama import Style
 
-from helper import printer, randomuser, timer
+from helper import printer, proxymanager, randomuser, timer
 
 _REQUEST_TIMEOUT: int = 20
 _MAX_RETRIES: int = 3
@@ -126,6 +126,7 @@ def _get(url: str, params: dict | None = None) -> dict | None:
                 url,
                 params=params,
                 headers=headers,
+                proxies=proxymanager.get_requests_proxies(),
                 timeout=_REQUEST_TIMEOUT,
             )
             resp.raise_for_status()

@@ -28,7 +28,7 @@ from colorama import Style
 from ddgs import DDGS
 from ddgs.exceptions import DDGSException, RatelimitException, TimeoutException
 
-from helper import printer, timer
+from helper import printer, proxymanager, timer
 
 # Suppress verbose third-party warnings and raw info responses from filling the UI
 logging.getLogger("ddgs").setLevel(logging.ERROR)
@@ -466,7 +466,7 @@ def _fetch_results(
     for backend in backends:
         for attempt in range(1, _MAX_RETRIES + 1):
             try:
-                with DDGS() as ddgs:
+                with DDGS(proxy=proxymanager.get_proxy()) as ddgs:
                     raw: list[dict] = (
                         ddgs.text(query, max_results=max_results, backend=backend) or []
                     )
@@ -530,7 +530,7 @@ def _fetch_results(
 
     # Blanket fallback option: let the library attempt its automated resolution default
     try:
-        with DDGS() as ddgs:
+        with DDGS(proxy=proxymanager.get_proxy()) as ddgs:
             raw = ddgs.text(query, max_results=max_results, backend="auto") or []
             return [
                 SearchResult(

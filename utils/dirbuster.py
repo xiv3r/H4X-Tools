@@ -20,7 +20,7 @@ import asyncio
 import aiohttp
 from colorama import Style
 
-from helper import printer, randomuser, timer, url_helper
+from helper import printer, proxymanager, randomuser, timer, url_helper
 
 
 @timer.timer(require_input=True)
@@ -68,7 +68,7 @@ async def _fetch_url(
     url = f"https://{domain}/{path}"
     headers = {"User-Agent": str(randomuser.GetUser())}
     try:
-        async with session.get(url, headers=headers) as response:
+        async with session.get(url, headers=headers, proxy=proxymanager.get_aiohttp_proxy()) as response:
             if response.status == 200:
                 url_set.add(url)
                 printer.success(
