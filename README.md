@@ -261,8 +261,8 @@ The built-in manager covers the following tools automatically when enabled:
 | Git Scrape | Full (HTTP + SOCKS) |
 | Username Search | Full (HTTP + SOCKS, via Maigret `--proxy`) |
 | Web Reconnaissance | Full (HTTP + SOCKS) |
-| Web Scrape | HTTP/HTTPS proxies only ¹ |
-| Dir Buster | HTTP/HTTPS proxies only ¹ |
+| Web Scrape | HTTP/HTTPS proxies only |
+| Dir Buster | HTTP/HTTPS proxies only |
 | Email Search | Not supported (holehe subprocess) |
 | Phone Lookup | Not supported (ignorant subprocess) |
 | WhoIs Lookup | Not supported (raw WHOIS socket protocol) |
