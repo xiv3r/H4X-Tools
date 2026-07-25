@@ -189,13 +189,13 @@ For larger tools, keep the UI wrapper in `tools/my_tool.py` and place reusable i
 
 ## Running with proxies
 
-H4X-Tools supports two proxy methods. The **built-in Proxy Manager** (method 1) is the recommended starting point — it requires no extra software and integrates directly with the toolkit. **ProxyChains** (method 2) is a system-level alternative that is useful when you need to cover tools that the built-in manager cannot reach.
+H4X-Tools supports two proxy methods. The **built-in Proxy Manager** (method 1) is the recommended starting point. It requires no extra software and integrates directly with the toolkit. **ProxyChains** (method 2) is a system-level alternative that is useful when you need to cover tools that the built-in manager cannot reach.
 
 ---
 
 ## Method 1 — Built-in Proxy Manager
 
-The built-in Proxy Manager lets you add, test, and enable proxies from inside H4X-Tools. Once enabled, every compatible tool automatically routes its traffic through your configured proxies — no extra command or configuration file needed.
+The built-in Proxy Manager lets you add, test, and enable proxies from inside H4X-Tools. Once enabled, every compatible tool automatically routes its traffic through your configured proxies. No extra command or configuration file needed.
 
 ### Supported proxy formats
 
@@ -210,7 +210,7 @@ socks5://username:password@host:port
 
 ### Opening the Proxy Manager
 
-Select **[18] Proxy Manager** from the interactive menu, or run it directly:
+Select **Proxy Manager** from the interactive menu, or run it directly:
 
 ```sh
 python h4xtools.py --proxy-manager
@@ -255,17 +255,17 @@ The built-in manager covers the following tools automatically when enabled:
 
 | Tool | Proxy support |
 |---|---|
-| IP Lookup | ✅ Full (HTTP + SOCKS) |
-| IG Scrape | ✅ Full (HTTP + SOCKS) |
-| Leak Search | ✅ Full (HTTP + SOCKS) |
-| Git Scrape | ✅ Full (HTTP + SOCKS) |
-| Username Search | ✅ Full (HTTP + SOCKS, via Maigret `--proxy`) |
-| Web Reconnaissance | ✅ Full (HTTP + SOCKS) |
-| Web Scrape | ✅ HTTP/HTTPS proxies only ¹ |
-| Dir Buster | ✅ HTTP/HTTPS proxies only ¹ |
-| Email Search | ❌ Not supported (holehe subprocess) |
-| Phone Lookup | ❌ Not supported (ignorant subprocess) |
-| WhoIs Lookup | ❌ Not supported (raw WHOIS socket protocol) |
+| IP Lookup | Full (HTTP + SOCKS) |
+| IG Scrape | Full (HTTP + SOCKS) |
+| Leak Search | Full (HTTP + SOCKS) |
+| Git Scrape | Full (HTTP + SOCKS) |
+| Username Search | Full (HTTP + SOCKS, via Maigret `--proxy`) |
+| Web Reconnaissance | Full (HTTP + SOCKS) |
+| Web Scrape | HTTP/HTTPS proxies only ¹ |
+| Dir Buster | HTTP/HTTPS proxies only ¹ |
+| Email Search | Not supported (holehe subprocess) |
+| Phone Lookup | Not supported (ignorant subprocess) |
+| WhoIs Lookup | Not supported (raw WHOIS socket protocol) |
 
 > ¹ Web Scrape and Dir Buster use `aiohttp`, which natively supports HTTP/HTTPS proxies only. SOCKS proxies are silently skipped for these two tools. Use ProxyChains (method 2) if you need SOCKS coverage for them.
 
