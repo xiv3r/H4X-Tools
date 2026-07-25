@@ -100,7 +100,7 @@ class GitScrape(BaseTool):
     name = "Git Scrape"
     order = 17
     aliases = ("--git", "--git-scrape", "--gitscrape")
-    description = "Scrapes and analyzes a Git repository (remote/local) or a GitHub account for possible personal email leaks and other data."
+    description = "Scrapes and analyzes a Git repository (local path, GitHub URL, or any remote URL) or a GitHub account. Detects leaked commit identities, accidental secrets (API keys, tokens, private keys, passwords) in diff history, sensitive tracked files, and suspicious commit messages."
     arguments = (
         ToolArgument(
             "target",
@@ -122,7 +122,7 @@ class GitScrape(BaseTool):
 
         if not target:
             target = printer.user_input(
-                "Enter a target GitHub username OR GitHub repo path/url : \t"
+                "Enter a GitHub username, local repo path, or repo URL : \t"
             ).strip()
 
         if not target:
