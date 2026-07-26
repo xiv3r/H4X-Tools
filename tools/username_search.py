@@ -25,7 +25,7 @@ class UsernameSearchTool(BaseTool):
     order = 5
     aliases = ("--username", "--username-search")
     description = (
-        "Checks a username across a configurable number of websites using Maigret's maintained site database and detection engines. "
+        "Checks a username across thousands of websites using the fully integrated Maigret OSINT tool. "
         "Results can optionally be exported as TXT, CSV, or JSON."
     )
     arguments = (ToolArgument("username", "USERNAME", "Run Maigret username search."),)

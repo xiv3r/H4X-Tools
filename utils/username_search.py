@@ -111,7 +111,7 @@ def search(username: str, site_count: int | None = None) -> None:
     else:
         printer.info("Report saving skipped.")
 
-    printer.info("Credits to soxoj and contributors for Maigret.")
+    printer.info("Credits to Soxoj and contributors for Maigret.")
 
 
 # Internal helpers
