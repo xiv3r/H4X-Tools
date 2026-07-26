@@ -31,7 +31,7 @@ class UsernameSearchTool(BaseTool):
     arguments = (ToolArgument("username", "USERNAME", "Run Maigret username search."),)
 
     def run(self, username: str | None = None) -> None:
-        from utils import search_username
+        from utils import username_search
 
         printer.info(
             "Maigret will check the username with configurable scan options and optional TXT/CSV/JSON export."
@@ -39,4 +39,4 @@ class UsernameSearchTool(BaseTool):
         username = str(
             username or printer.user_input("Enter a target username : \t")
         ).replace(" ", "_")
-        search_username.search(username=username)
+        username_search.search(username=username)
