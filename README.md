@@ -17,7 +17,7 @@ A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - buil
 
 <p align="center">
   <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=H4xtool&utm_term=H4xtool&utm_id=H4xtool">
-    <img src="https://github.com/user-attachments/assets/c4560f9a-0c66-4964-8fd6-9b8e00a45ac6" width="350" alt="Coreclaw">
+    <img src="https://github.com/user-attachments/assets/c4560f9a-0c66-4964-8fd6-9b8e00a45ac6" width="650" alt="Coreclaw">
   </a>
 </p>
 
