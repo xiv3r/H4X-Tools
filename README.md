@@ -1,6 +1,3 @@
-#### Contributions are WELCOME!!! And NEEDED!!
-If you have the knowledge and skills, please contribute by opening a pull request. I don’t want to be the only one keeping this project alive. Every tool is welcome and feel free to even fix my code, just follow the contribution rules listed on this README. Let's make this the biggest OSINT, scraping, recon and utility toolkit together, shall we?
-
 # H4X-Tools
 
 [![GitHub latest commit](https://badgen.net/github/last-commit/vil/H4X-Tools)](https://GitHub.com/vil/H4X-Tools/commit/)
@@ -11,6 +8,25 @@ If you have the knowledge and skills, please contribute by opening a pull reques
 A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - built in Python, runs on Linux and Windows.
 
 ![](https://github.com/vil/vil/blob/master/h4xtools_gui_v26.png?raw=true)
+
+*This project needs contributors, feel free to submit your own tool(s) and improvements!*
+
+<br>
+
+## Sponsors
+
+<p align="center">
+  <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=H4xtool&utm_term=H4xtool&utm_id=H4xtool">
+    <img src="https://github.com/user-attachments/assets/c4560f9a-0c66-4964-8fd6-9b8e00a45ac6" width="350" alt="Coreclaw">
+  </a>
+</p>
+
+<p>
+   <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=H4xtool&utm_term=H4xtool&utm_id=H4xtool"><b>Coreclaw</b></a>, a ready-to-use web data extraction platform. Provides 100+ ready-to-use scrapers for Instagram, Amazon, TikTok, Google Maps, and more, exporting clean structured data without managing headless browsers or IP bans. 
+<br><br>
+    <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=H4xtool&utm_term=H4xtool&utm_id=H4xtool"><b>Get started for free now!</b>
+</a>
+</p>
 
 <br>
 
