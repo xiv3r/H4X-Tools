@@ -11,8 +11,6 @@ A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - buil
 
 *This project needs contributors, feel free to submit your own tool(s) and improvements!*
 
-<br>
-
 ## Tools
 
 | # | Tool | Description |
