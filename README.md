@@ -13,23 +13,6 @@ A modular, terminal-based toolkit for OSINT, reconnaissance, and scraping - buil
 
 <br>
 
-## Sponsors
-
-<p align="center">
-  <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=H4xtool&utm_term=H4xtool&utm_id=H4xtool">
-    <img src="https://github.com/user-attachments/assets/c4560f9a-0c66-4964-8fd6-9b8e00a45ac6" width="650" alt="Coreclaw">
-  </a>
-</p>
-
-<p>
-   <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=H4xtool&utm_term=H4xtool&utm_id=H4xtool"><b>Coreclaw</b></a>, a ready-to-use web data extraction platform. Provides 100+ ready-to-use scrapers for Instagram, Amazon, TikTok, Google Maps, and more, exporting clean structured data without managing headless browsers or IP bans. 
-<br><br>
-    <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=referral&utm_campaign=H4xtool&utm_term=H4xtool&utm_id=H4xtool"><b>Get started for free now!</b>
-</a>
-</p>
-
-<br>
-
 ## Tools
 
 | # | Tool | Description |
@@ -430,11 +413,3 @@ Pre-compiled binaries are **not** provided. Downloading pre-built executables fr
 > This source code is licensed under the [GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt).
 
 **This toolkit is intended for educational and authorised security research purposes only. Do not use it against systems or accounts you do not own or have explicit permission to test.**
-
----
-
-### Past Sponsors
-Thanks to the past sponsors of H4X-Tools!
-
-- [SwiftProxy](https://www.swiftproxy.net/?ref=H4XTools)
-- [MangoProxy](https://mangoproxy.com/?utm_source=github&utm_medium=partner&utm_campaign=vili)
